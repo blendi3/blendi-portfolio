@@ -79,7 +79,7 @@ const Contact = () => {
                   <Form
                     id="contact-form"
                     onSubmit={handleSubmit}
-                    className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+                    className="flex flex-col gap-6 p-4 md:p-10 bg-[#27272c] rounded-xl"
                   >
                     <h3 className="text-4xl text-accent">
                       Let's work together
