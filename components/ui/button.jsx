@@ -25,16 +25,34 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
+    compoundVariants: [
+      {
+        variant: "default",
+        disabled: true,
+        className: "cursor-not-allowed opacity-50",
+      },
+      {
+        variant: "primary",
+        disabled: true,
+        className: "cursor-not-allowed opacity-50",
+      },
+      {
+        variant: "outline",
+        disabled: true,
+        className: "cursor-not-allowed opacity-50",
+      },
+    ],
   }
 );
 
 const Button = React.forwardRef(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className, disabled }))}
         ref={ref}
+        disabled={disabled}
         {...props}
       />
     );

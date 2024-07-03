@@ -75,7 +75,7 @@ const Contact = () => {
                 validationSchema={contactSchema}
                 onSubmit={handleSubmit}
               >
-                {({ handleSubmit, isSubmitting, errors }) => (
+                {({ handleSubmit, isSubmitting, isValid, errors }) => (
                   <Form
                     id="contact-form"
                     onSubmit={handleSubmit}
@@ -85,8 +85,10 @@ const Contact = () => {
                       Let's work together
                     </h3>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quis quos voluptates vitae eaque non velit laborum
+                      I'm excited to connect with you! Whether you have a
+                      project in mind, a question, or just want to say hi, feel
+                      free to drop me a message. I'll get back to you as soon as
+                      possible.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col">
@@ -148,7 +150,7 @@ const Contact = () => {
                       size="md"
                       className="w-full md:max-w-40"
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !isValid}
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
