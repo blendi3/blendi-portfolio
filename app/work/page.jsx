@@ -34,7 +34,7 @@ const projects = [
       { name: "Plaid" },
     ],
     image: "/icons/Payzen3.jpg",
-    live: "https://banking-vert-xi.vercel.app/",
+    live: "https://payzen-bank.vercel.app",
     github: "https://github.com/blendi3/banking",
   },
   {
