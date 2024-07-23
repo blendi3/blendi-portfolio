@@ -55,19 +55,21 @@ const projects = [
   },
   {
     num: "03",
-    catergory: "Youtube Clone",
+    catergory: "Patient Management App",
     title: "project 3",
     description:
-      "I built a replica of the YouTube homepage using React, TypeScript, and Vite. It showcases a responsive design with a video grid layout, hover play effect, and accurate replication of YouTube's navigation and sidebar. This front-end mockup does not interact with real backend or YouTube API.",
+      "A streamlined patient management app that simplifies scheduling, tracking, and managing patient information efficiently.",
     stack: [
       { name: "React.js" },
       { name: "TypeScript" },
-      { name: "TailwindCss" },
-      { name: "Vite" },
+      { name: "Next.js" },
+      { name: "Appwrite" },
+      { name: "TailwindCSS" },
+      { name: "ShadCn" },
     ],
-    image: "/icons/youtubeHomepage.jpg",
-    live: "",
-    github: "https://github.com/blendi3/youtube-homepage-clone",
+    image: "/icons/patient-pulse.jpg",
+    live: "https://patient-pulse.vercel.app/",
+    github: "https://github.com/blendi3/PatientPulse",
   },
 ];
 
@@ -98,7 +100,20 @@ const Work = () => {
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
                 {project.catergory}
               </h2>
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-white/60">
+                {project.num === "03" ? (
+                  <>
+                    A streamlined patient management app that simplifies
+                    scheduling, tracking, and managing patient information
+                    efficiently.
+                    <span className="block mt-2 bg-yellow-100 text-black p-2 rounded-md">
+                      Password for Admin: 123456
+                    </span>
+                  </>
+                ) : (
+                  project.description
+                )}
+              </p>
 
               <ul className="flex gap-4 flex-wrap">
                 {project.stack.map((item, index) => {
