@@ -1,8 +1,8 @@
 "use client";
 
 import { FaHtml5, FaCss3, FaReact, FaJs } from "react-icons/fa";
-
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { GrGraphQl } from "react-icons/gr";
+import { SiTailwindcss, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 const about = {
   title: "About me",
@@ -108,6 +108,14 @@ const skills = {
       icon: <SiTailwindcss />,
       name: "tailwindCss",
     },
+    {
+      icon: <GrGraphQl />,
+      name: "graphql",
+    },
+    {
+      icon: <SiTypescript />,
+      name: "typescript",
+    },
   ],
 };
 
@@ -123,6 +131,8 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Footer from "@/components/Footer";
 
 const Resume = () => {
   return (
@@ -134,7 +144,7 @@ const Resume = () => {
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
-      <div className="container mx-auto">
+      <div className="h-full container mx-auto">
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
@@ -273,6 +283,7 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
+        <Footer />
       </div>
     </motion.div>
   );

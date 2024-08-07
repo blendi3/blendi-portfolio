@@ -1,9 +1,11 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
@@ -44,7 +46,7 @@ const Home = () => {
                 className="uppercase flex items-center gap-2"
                 onClick={handleResumeDownload}
               >
-                <span>Download CV</span>
+                <span>my resume</span>
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 xl:mb-0">
@@ -62,7 +64,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Stats />
+      <Footer />
     </section>
   );
 };

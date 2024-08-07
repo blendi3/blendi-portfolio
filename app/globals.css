@@ -31,4 +31,9 @@
     color: transparent;
     -webkit-text-stroke: 1px white; /* White outline */
   }
+
+  * {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #00ff99 rgb(161, 158, 158); /* Color of the scrollbar thumb and track */
+  }
 }

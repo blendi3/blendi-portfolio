@@ -31,6 +31,7 @@ const info = [
 ];
 
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const Contact = () => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -174,6 +175,7 @@ const Contact = () => {
               </ul>
             </div>
           </div>
+          <Footer />
         </div>
       </motion.section>
     </>

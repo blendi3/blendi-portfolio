@@ -18,10 +18,29 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import Footer from "@/components/Footer";
 
 const projects = [
   {
     num: "01",
+    catergory: "Patient Management App",
+    title: "project 3",
+    description:
+      "A streamlined patient management app that simplifies scheduling, tracking, and managing patient information efficiently.",
+    stack: [
+      { name: "React.js" },
+      { name: "TypeScript" },
+      { name: "Next.js" },
+      { name: "Appwrite" },
+      { name: "TailwindCSS" },
+      { name: "ShadCn" },
+    ],
+    image: "/icons/patient-pulse-app.jpg",
+    live: "https://patient-pulse.vercel.app/",
+    github: "https://github.com/blendi3/PatientPulse",
+  },
+  {
+    num: "02",
     catergory: "Banking App",
     title: "project 1",
     description:
@@ -33,12 +52,12 @@ const projects = [
       { name: "Sentry" },
       { name: "Plaid" },
     ],
-    image: "/icons/Payzen3.jpg",
+    image: "/icons/payzen-bank-app.jpg",
     live: "https://payzen-bank.vercel.app",
     github: "https://github.com/blendi3/banking",
   },
   {
-    num: "02",
+    num: "03",
     catergory: "Task Managment App",
     title: "project 2",
     description:
@@ -53,31 +72,13 @@ const projects = [
     live: "https://taskflowmanagement.netlify.app/",
     github: "https://github.com/blendi3/task-management-app",
   },
-  {
-    num: "03",
-    catergory: "Patient Management App",
-    title: "project 3",
-    description:
-      "A streamlined patient management app that simplifies scheduling, tracking, and managing patient information efficiently.",
-    stack: [
-      { name: "React.js" },
-      { name: "TypeScript" },
-      { name: "Next.js" },
-      { name: "Appwrite" },
-      { name: "TailwindCSS" },
-      { name: "ShadCn" },
-    ],
-    image: "/icons/patient-pulse.jpg",
-    live: "https://patient-pulse.vercel.app/",
-    github: "https://github.com/blendi3/PatientPulse",
-  },
 ];
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
+    const currentIndex = swiper.realIndex;
 
     setProject(projects[currentIndex]);
   };
@@ -90,7 +91,7 @@ const Work = () => {
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
-      <div className="container mx-auto">
+      <div className="h-full container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
@@ -101,7 +102,7 @@ const Work = () => {
                 {project.catergory}
               </h2>
               <p className="text-white/60">
-                {project.num === "03" ? (
+                {project.num === "01" ? (
                   <>
                     A streamlined patient management app that simplifies
                     scheduling, tracking, and managing patient information
@@ -164,6 +165,7 @@ const Work = () => {
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
+              loop={true}
             >
               {projects.map((project, index) => {
                 return (
@@ -188,6 +190,7 @@ const Work = () => {
             </Swiper>
           </div>
         </div>
+        <Footer />
       </div>
     </motion.div>
   );
